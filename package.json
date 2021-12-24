@@ -1,0 +1,23 @@
+{
+  "name": "nodejbd",
+  "version": "1.0.0",
+  "description": "Utility to retrieve data from JBD/Overkill Solar BMS units and publish it to MQTT, written in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mickwheelz",
+  "license": "MIT",
+  "bin": {
+    "node-jbd": "./index.js"
+  },
+  "dependencies": {
+    "async-mqtt": "^2.6.1",
+    "mqtt": "^4.2.8",
+    "node-dht-sensor": "^0.4.3",
+    "pino": "^6.13.3",
+    "pino-pretty": "^7.0.1",
+    "serialport": "^9.2.5",
+    "yargs": "^17.2.1"
+  }
+}
