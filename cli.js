@@ -32,7 +32,7 @@ const argv = yargs
         alias: 't',
         description: 'MQTT topic to publish to defaults to \'NodeJBD\' (e.g -t MyTopic)',
         type: 'string',
-        default: 'NodeJBD'
+        default: 'NodeDHT'
     })
     .option('pollinginterval', {
         alias: 'i',
