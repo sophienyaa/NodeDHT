@@ -6,7 +6,7 @@ const mqtt = require('./mqtt');
 
 async function main() {
 
-  logger.info('Starting NodeJBD...');
+  logger.info('Starting NodeDHT...');
   try {
 
     const args = cli.args;
@@ -14,13 +14,8 @@ async function main() {
 
     setInterval(
       async function() {
-        //send requests, response handled by eventlistener
         const result = await dht.getSensorValue()
-
-        console.log(result);
-
         await mqtt.publish(result, 'data');
-
       }, 
       args.pollinginterval * 1000
     );

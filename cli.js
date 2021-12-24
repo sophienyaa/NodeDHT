@@ -1,16 +1,17 @@
 const yargs = require('yargs');
 
 const argv = yargs
-    .option('serialport', {
-        alias: 's',
-        description: 'Serial port your BMS is connected to (e.g -s /dev/ttyUSB0)',
-        type: 'string',
-    })
-    .option('baudrate', {
-        alias: 'b',
-        description: 'The baud rate to use for serial communications, defaults to 9600 (e.g -b 14400)',
+    .option('gpio', {
+        alias: 'g',
+        description: 'GPIO pin your DHT sensor is connected to (e.g 4)',
         type: 'integer',
-        default: 9600
+        default: 4,
+    })
+    .option('sensorType', {
+        alias: 's',
+        description: 'The type of sensor, e.g DHT22',
+        type: 'integer',
+        default: 22
     })
     .option('mqttbroker', {
         alias: 'm',

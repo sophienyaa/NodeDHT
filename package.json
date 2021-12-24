@@ -1,7 +1,7 @@
 {
   "name": "nodejbd",
   "version": "1.0.0",
-  "description": "Utility to retrieve data from JBD/Overkill Solar BMS units and publish it to MQTT, written in NodeJS",
+  "description": "Utility to retrieve data from A DHT11/DHT22 sensor and publish it to MQTT, written in NodeJS",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
