@@ -6,7 +6,14 @@ module.exports = {
     getSensorValue: async function() {
         try {
             const res = await sensor.read(args.sensorType, args.gpio);
-            return res;
+        
+            let toReturn = {
+                temperature: res.temperature.toFixed(2),
+                humidity: res.humidity.toFixed(2),
+                isValid: res.isValid,
+                errors: res.errors
+            }
+            return toReturn;
         } catch (err) {
             console.error("Failed to read sensor data:", err);
         }
