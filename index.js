@@ -15,8 +15,13 @@ async function main() {
     setInterval(
       async function() {
         const result = await dht.getSensorValue()
+        
         logger.trace(result, 'Sensor Data...');
-        await mqtt.publish(result, 'data');
+
+        if(args.mqttbroker) {
+          await mqtt.publish(result, 'sensor');
+        }
+
       }, 
       args.pollinginterval * 1000
     );
@@ -25,7 +30,6 @@ async function main() {
     logger.error(e);
     process.exit(1);
   }
-
 }
 
 main();
