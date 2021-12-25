@@ -104,7 +104,7 @@ WantedBy=multi-user.target
 ```
 Note the `Environment=...` lines, set any configuration options here such as serial port, MQTT broker, interval, etc.
 
-2. Name this file `nodejbd.service` and save it in `/etc/systemd/system`
+2. Name this file `nodedht.service` and save it in `/etc/systemd/system`
 
 3. Run the following commands:
 
@@ -139,9 +139,9 @@ Essentially you just need to extract the values from the JSON payload published 
 
 See below for some examples:
 
-```
+```yaml
 sensor:
- |platform: mqtt
+- platform: mqtt
     name: "Temperature"
     state_topic: "NodeDHT/sensor"
     value_template: "{{ value_json['temperature'] }}"
